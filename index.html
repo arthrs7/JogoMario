@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./js/script.js" defer></script>
+
+        <title>Mario Jmp</title>
+    </head>
+    <body>
+        <div class="game-board">
+            <img src="./imagens/clouds.png" class="clouds">
+            <img src="./imagens/mario.gif" class="mario">
+            <img src="./imagens/pipe.png" class="pipe"> 
+            <img src="./imagens/balamario.png" class="bala" style="display: none;">
+        </div>
+
+        <div class="scoreboard">
+            <span>Pontuação: <span id="score">0</span></span>
+            <span style="margin-left: 30px;">Recorde: <span id="highscore">0</span></span>
+        </div>
+
+        <button id="start-btn">Iniciar Jogo</button>
+        <button id="restart-btn" style="display: none;">Recomeçar</button>
+    </body>
+
+</html>

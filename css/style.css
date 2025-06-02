@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.game-board{
+    width: 100%;
+    height: 500px;
+    border-bottom: 15px solid green ;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animaction 2s linear infinite;
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0;   
+}
+
+.mario.crouch {
+    height: 80px; /* ou outro valor que não achate tanto */
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+.clouds {
+    position: absolute;
+    width: 550px;
+    animation: clouds-animaction 20s infinite linear;
+}
+
+
+@keyframes pipe-animaction {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animaction {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+#start-btn {
+    display: block;
+    margin: 30px auto 0 auto;
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(90deg, #ffb347 0%, #ffcc33 100%);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#start-btn:hover {
+    background: linear-gradient(90deg, #ffcc33 0%, #ffb347 100%);
+    transform: scale(1.05);
+}
+
+#restart-btn {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 13px 36px;
+    font-size: 1.1rem;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(90deg, #ff5858 0%, #ffb347 100%);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#restart-btn:hover {
+    background: linear-gradient(90deg, #ffb347 0%, #ff5858 100%);
+    transform: scale(1.05);
+}
+
+.bala {
+    position: absolute;
+    width: 300px;
+    top: 100px;
+    left: 100%;
+    animation: bala-animation 0.25s infinite linear; /* velocidade muito aumentada */
+    display: none;
+}
+
+@keyframes bala-animation {
+    from {
+        left: 100%;
+    }
+    to {
+        left: -120px;
+    }
+}
+
+.scoreboard {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}

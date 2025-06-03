@@ -3,7 +3,8 @@ const pipe = document.querySelector('.pipe');
 const bala = document.querySelector('.bala');
 let loop = null;
 let balaLoop = null;
-let isCrouching = false; // Adicione esta linha
+let isCrouching = false;
+let isJumping = false; // NOVA VARIÁVEL
 let score = 0;
 let highscore = localStorage.getItem('mario_highscore') || 0;
 const scoreSpan = document.getElementById('score');
@@ -13,14 +14,18 @@ const highscoreSpan = document.getElementById('highscore');
 if (highscoreSpan) highscoreSpan.textContent = highscore;
 
 const jump = () => {
+    if (isJumping) return; // Impede múltiplos pulos
+    isJumping = true;
     mario.classList.add('jump');
 
     setTimeout(() => {
         mario.classList.remove('jump');
+        isJumping = false;
     }, 500);
 }
 
 const crouch = () => {
+    if (isJumping) return; // NÃO AGACHA NO AR
     mario.classList.add('crouch');
     isCrouching = true; // Atualiza o estado
 };
